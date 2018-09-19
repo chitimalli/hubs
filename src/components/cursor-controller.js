@@ -156,6 +156,10 @@ AFRAME.registerComponent("cursor-controller", {
       if (!this.enabled) {
         return;
       }
+      if (this.dirty) {
+        this.populateEntities(this.data.objects, this.targets);
+        this.dirty = false;
+      }
 
       const intersection = this.intersection;
       this.emitIntersectionEvents(this.prevIntersection, intersection);

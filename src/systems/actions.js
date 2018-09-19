@@ -1,11 +1,19 @@
+<<<<<<< Updated upstream
 import { KBMBindings, gamepadBindings } from "./actions/bindings";
+=======
+import { KBMBindings, TouchscreenBindings } from "./actions/bindings";
+>>>>>>> Stashed changes
 import { sets } from "./actions/sets";
 import { paths } from "./actions/paths";
 
 import MouseDevice from "./actions/devices/mouse";
 import KeyboardDevice from "./actions/devices/keyboard";
 import SmartMouseDevice from "./actions/devices/smartMouse";
+<<<<<<< Updated upstream
 import GamepadDevice from "./actions/devices/gamepad";
+=======
+import TouchscreenDevice from "./actions/touchscreen";
+>>>>>>> Stashed changes
 
 function difference(setA, setB) {
   const _difference = new Set(setA);
@@ -108,9 +116,14 @@ AFRAME.registerSystem("actions", {
     activeDevices.add(new MouseDevice());
     activeDevices.add(new SmartMouseDevice());
     activeDevices.add(new KeyboardDevice());
+    activeDevices.add(new TouchscreenDevice());
 
+<<<<<<< Updated upstream
     registeredMappings.add(KBMBindings);
     registeredMappings.add(gamepadBindings);
+=======
+    registeredMappings.add(TouchscreenBindings);
+>>>>>>> Stashed changes
   },
 
   tick() {

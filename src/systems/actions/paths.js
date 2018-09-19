@@ -26,10 +26,9 @@ paths.device.smartMouse.cursorPose = "/device/smartMouse/cursorPose";
 paths.device.smartMouse.cameraDelta = "/device/smartMouse/cameraDelta";
 
 paths.device.touchscreen = {};
-paths.device.touchscreen.joystickLeft = "/device/touchscreen/joystickLeft";
-paths.device.touchscreen.joystickRight = "/device/touchscreen/joystickRight";
-paths.device.touchscreen.targetlessPinch = "/device/touchscreen/targetlessPinch";
-paths.device.touchscreen.interactablePinch = "/device/touchscreen/interactablePinch";
+paths.device.touchscreen.cursorPose = "/device/touchscreen/cursorPose";
+paths.device.touchscreen.cameraDelta = "/device/touchscreen/cameraDelta";
+paths.device.touchscreen.pinch = "/device/touchscreen/pinch";
 
 paths.device.keyboard = "/device/keyboard/";
 // There are so many keys on the keyboard that the paths here

@@ -12,6 +12,36 @@ export const gamepadBindings = {
   // ]
 };
 
+export const TouchscreenBindings = {
+  [sets.global]: [
+    {
+      src: { value: paths.device.touchscreen.cursorPose },
+      dest: { value: paths.app.cursorPose },
+      xform: xforms.copy
+    },
+    {
+      src: { value: paths.device.touchscreen.cameraDelta },
+      dest: { x: "/var/touchscreenCamDeltaX", y: "/var/touchscreenCamDeltaY" },
+      xform: xforms.split_vec2
+    },
+    {
+      src: { value: "/var/touchscreenCamDeltaX" },
+      dest: { value: "/var/touchscreenCamDeltaXScaled" },
+      xform: xforms.scale(0.18)
+    },
+    {
+      src: { value: "/var/touchscreenCamDeltaY" },
+      dest: { value: "/var/touchscreenCamDeltaYScaled" },
+      xform: xforms.scale(0.35)
+    },
+    {
+      src: { x: "/var/touchscreenCamDeltaXScaled", y: "/var/touchscreenCamDeltaYScaled" },
+      dest: { value: paths.app.cameraDelta },
+      xform: xforms.compose_vec2
+    },
+  ]
+}
+
 export const KBMBindings = {
   [sets.global]: [
     {
